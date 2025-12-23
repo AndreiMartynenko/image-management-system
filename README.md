@@ -2,6 +2,8 @@
 
 This is a **Java (Spring Boot)** prototype for the CI7250 coursework brief (Image Management System).
 
+Check the implementation against the coursework requirements.
+
 ## Tech
 
 - Java 21
