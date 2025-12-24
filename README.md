@@ -3,6 +3,7 @@
 This is a **Java (Spring Boot)** prototype for the CI7250 coursework brief (Image Management System).
 
 Check the implementation against the coursework requirements.
+Check the name of the project and the package names.
 
 ## Tech
 
@@ -96,3 +97,4 @@ curl -u admin:password -H 'Content-Type: application/json' \
   - `config` (security)
 
 This provides a clear **service-oriented/modular** design and can be extended with a database later (e.g. PostgreSQL) or split into microservices.
+
