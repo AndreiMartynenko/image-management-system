@@ -2,29 +2,54 @@ package uk.ac.kingston.ci7250.ims.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    @Order(1)
+    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
         return http
+                .securityMatcher(new AntPathRequestMatcher("/api/**"))
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/error").permitAll()
-                        .requestMatchers("/actuator/health").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/staff/**").hasRole("STAFF")
-                        .requestMatchers("/api/**").authenticated()
-                        .anyRequest().denyAll()
+                        .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())
+                .build();
+    }
+
+    @Bean
+    @Order(2)
+    public SecurityFilterChain uiSecurityFilterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/", "/error", "/login").permitAll()
+                        .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/images/**").permitAll()
+                        .requestMatchers("/ui/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/ui/**").authenticated()
+                        .anyRequest().denyAll()
+                )
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/ui", true)
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login?logout")
+                )
                 .build();
     }
 

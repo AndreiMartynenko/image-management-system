@@ -25,3 +25,8 @@
 /Users/developer/image-management-system/src/main/java/uk/ac/kingston/ci7250/ims/web/dto/CreatePatientRequest.java
 /Users/developer/image-management-system/src/main/java/uk/ac/kingston/ci7250/ims/web/dto/CreateStaffRequest.java
 /Users/developer/image-management-system/src/main/java/uk/ac/kingston/ci7250/ims/web/dto/UploadImageRequest.java
+/Users/developer/image-management-system/src/main/java/uk/ac/kingston/ci7250/ims/web/ui/LoginController.java
+/Users/developer/image-management-system/src/main/java/uk/ac/kingston/ci7250/ims/web/ui/UiAdminStaffController.java
+/Users/developer/image-management-system/src/main/java/uk/ac/kingston/ci7250/ims/web/ui/UiDashboardController.java
+/Users/developer/image-management-system/src/main/java/uk/ac/kingston/ci7250/ims/web/ui/UiPatientDetailController.java
+/Users/developer/image-management-system/src/main/java/uk/ac/kingston/ci7250/ims/web/ui/UiPatientsController.java

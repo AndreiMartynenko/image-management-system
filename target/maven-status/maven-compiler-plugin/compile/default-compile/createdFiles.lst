@@ -7,6 +7,7 @@ uk/ac/kingston/ci7250/ims/service/StaffService.class
 uk/ac/kingston/ci7250/ims/repo/WorkflowTaskRepository.class
 uk/ac/kingston/ci7250/ims/web/StaffController.class
 uk/ac/kingston/ci7250/ims/repo/StaffRepository.class
+uk/ac/kingston/ci7250/ims/web/HomeController.class
 uk/ac/kingston/ci7250/ims/domain/Modality.class
 uk/ac/kingston/ci7250/ims/service/BillingService.class
 uk/ac/kingston/ci7250/ims/repo/ImageRepository.class
