@@ -4,8 +4,7 @@ This is a **Java (Spring Boot)** prototype for the CI7250 coursework brief (Imag
 
 Check the implementation against the coursework requirements.
 Check the name of the project and the package names.
-check name of the files.
-Check the content of the files.
+
 
 ## Tech
 
