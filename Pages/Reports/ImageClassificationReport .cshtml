@@ -1,0 +1,58 @@
+﻿@page
+@model HealthcareIMS.Pages.Reports.ImageClassificationReportModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Image Classification Report</h2>
+
+    <form method="get" class="row g-3 mb-3">
+        <div class="col-auto">
+            <label>Filter by Imaging Type (MRI, CT, etc.):</label>
+            <input asp-for="FilterImagingType" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <label>Filter by Disease Type:</label>
+            <input asp-for="FilterDiseaseType" class="form-control" />
+        </div>
+        <div class="col-auto align-self-end">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    @if (Model.ImagingList != null && Model.ImagingList.Any())
+    {
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>Imaging ID</th>
+                    <th>Visit</th>
+                    <th>ImagingType</th>
+                    <th>DiseaseType</th>
+                    <th>CapturedBy</th>
+                    <th>CaptureDate</th>
+                    <th>File</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var img in Model.ImagingList)
+                {
+                    <tr>
+                        <td>@img.Id</td>
+                        <td>@img.VisitId</td>
+                        <td>@img.ImagingType</td>
+                        <td>@img.DiseaseType</td>
+                        <td>@img.CapturedBy</td>
+                        <td>@img.CaptureDate.ToString("yyyy-MM-dd HH:mm")</td>
+                        <td>
+                            <a href="@img.ImageFile" download>Download</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No images found matching the filter.</p>
+    }
+</div>

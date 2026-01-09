@@ -1,0 +1,44 @@
+﻿@page "/Admin/ServiceDefinitions/Edit/{id:int}"
+@using HealthcareIMS.Models
+@namespace HealthcareIMS.Pages.Admin.ServiceDefinitions
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model EditModel
+
+@{
+    ViewData["Title"] = "Edit Service Definition";
+}
+
+<h2>Edit Service Definition</h2>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="ServiceDef.Id" />
+
+    <div class="mb-3">
+        <label asp-for="ServiceDef.Name" class="form-label"></label>
+        <input asp-for="ServiceDef.Name" class="form-control" />
+        <span asp-validation-for="ServiceDef.Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ServiceDef.Category" class="form-label"></label>
+        <input asp-for="ServiceDef.Category" class="form-control" />
+        <span asp-validation-for="ServiceDef.Category" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ServiceDef.DefaultCost" class="form-label"></label>
+        <input asp-for="ServiceDef.DefaultCost" type="number" step="0.01" class="form-control" />
+        <span asp-validation-for="ServiceDef.DefaultCost" class="text-danger"></span>
+    </div>
+    <div class="mb-3 form-check">
+        <input asp-for="ServiceDef.IsActive" class="form-check-input" />
+        <label asp-for="ServiceDef.IsActive" class="form-check-label"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="/Admin/ServiceDefinitions/Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

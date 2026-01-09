@@ -1,0 +1,325 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\HealthcareIMS.bundle.scp.css",
+      "PackagePath": "staticwebassets\\HealthcareIMS.1ygdhrs8zq.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\107faf3a-11ee-43a5-93c2-f9a70abd17af_2016-11-20.png",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\107faf3a-11ee-43a5-93c2-f9a70abd17af_2016-11-20.png"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\2ed7cb61-cea4-4eb3-b510-043542523e2f_2016-12-26 (1).png",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\2ed7cb61-cea4-4eb3-b510-043542523e2f_2016-12-26 (1).png"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\4514edbd-d646-4ca6-8d0b-3cde752cf45b_2016-11-25 (1).png",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\4514edbd-d646-4ca6-8d0b-3cde752cf45b_2016-11-25 (1).png"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\4e80dafa-e620-4649-820d-b7e6bb45a366_20241206_162031.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\4e80dafa-e620-4649-820d-b7e6bb45a366_20241206_162031.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\65d9f3bd-e7c9-45e7-801d-85a8671300c6_20241206_162027.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\65d9f3bd-e7c9-45e7-801d-85a8671300c6_20241206_162027.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\772a9f6c-20e8-4199-98be-1662ae5035f2_20241206_162027.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\772a9f6c-20e8-4199-98be-1662ae5035f2_20241206_162027.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\77bd197e-b1d3-4826-9656-574800b5e820_20241206_162027.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\77bd197e-b1d3-4826-9656-574800b5e820_20241206_162027.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\83d0b4a3-1ead-4d0c-b90e-e3cbb22252e5_2016-11-25 (1).png",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\83d0b4a3-1ead-4d0c-b90e-e3cbb22252e5_2016-11-25 (1).png"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\b75b26cc-bfac-4c5c-93b1-ae755868d2bc_2016-11-16 (2).png",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\b75b26cc-bfac-4c5c-93b1-ae755868d2bc_2016-11-16 (2).png"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\bbce6641-4b5f-4356-b00b-09439d059aec_20241206_162256.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\bbce6641-4b5f-4356-b00b-09439d059aec_20241206_162256.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\c20674bd-9370-41b4-ba92-85f5ed4b3d4a_Screenshot 2024-12-26 195515.png",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\c20674bd-9370-41b4-ba92-85f5ed4b3d4a_Screenshot 2024-12-26 195515.png"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\da8cb947-b08a-47e7-b698-7b8ff5971250_20241206_162104.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\da8cb947-b08a-47e7-b698-7b8ff5971250_20241206_162104.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\e6c2cdf4-a46a-4b2b-a9cd-0b752f566fb2_2016-11-16 (1).png",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\e6c2cdf4-a46a-4b2b-a9cd-0b752f566fb2_2016-11-16 (1).png"
+    },
+    {
+      "Id": "C:\\Users\\hhesh\\source\\repos\\HealthcareIMS\\wwwroot\\uploads\\imaging\\eaef2c9d-1e98-431d-b333-5d05b275b1ca_20241206_162051.jpg",
+      "PackagePath": "staticwebassets\\uploads\\imaging\\eaef2c9d-1e98-431d-b333-5d05b275b1ca_20241206_162051.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HealthcareIMS.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HealthcareIMS.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.HealthcareIMS.props",
+      "PackagePath": "build\\HealthcareIMS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.HealthcareIMS.props",
+      "PackagePath": "buildMultiTargeting\\HealthcareIMS.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.HealthcareIMS.props",
+      "PackagePath": "buildTransitive\\HealthcareIMS.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

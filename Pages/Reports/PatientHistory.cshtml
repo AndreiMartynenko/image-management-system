@@ -1,0 +1,80 @@
+﻿@page
+@model HealthcareIMS.Pages.Reports.PatientHistoryModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Patient History</h2>
+
+    <form method="get" class="row g-3 mb-3">
+        <div class="col-auto">
+            <label>Patient ID:</label>
+            <input type="number" asp-for="PatientId" class="form-control" />
+        </div>
+        <div class="col-auto align-self-end">
+            <button type="submit" class="btn btn-primary">View History</button>
+        </div>
+    </form>
+
+    @if (Model.TargetPatient != null)
+    {
+        <h4>
+            Patient: @Model.TargetPatient.User.FirstName @Model.TargetPatient.User.LastName
+            (ID=@Model.TargetPatient.Id)
+        </h4>
+
+        <h5>Visits</h5>
+        @if (Model.Visits != null && Model.Visits.Any())
+        {
+            <ul>
+                @foreach (var v in Model.Visits)
+                {
+                    <li>
+                        Visit #@v.Id - Status: @v.VisitStatus - Date: @v.VisitDate
+                        (TotalCost: @v.TotalCost)
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No visits found for this patient.</p>
+        }
+
+        <hr />
+        <h5>Services</h5>
+        @if (Model.Services != null && Model.Services.Any())
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Service ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Cost</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var s in Model.Services)
+                    {
+                        <tr>
+                            <td>@s.Id</td>
+                            <td>@s.ServiceName</td>
+                            <td>@s.ServiceCategory</td>
+                            <td>@s.ServiceStatus</td>
+                            <td>@s.ServiceCost</td>
+                            <td>@(s.Doctor?.User?.FirstName) @(s.Doctor?.User?.LastName)</td>
+                            <td>@s.ServiceDate.ToString("yyyy-MM-dd HH:mm")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No services found for this patient.</p>
+        }
+    }
+</div>

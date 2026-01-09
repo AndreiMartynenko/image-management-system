@@ -1,0 +1,59 @@
+﻿@page "/Reception/CreatePatient"
+@model CreatePatientModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Create New Patient</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div class="mb-3">
+        <label asp-for="Input.Email" class="form-label">Email</label>
+        <input asp-for="Input.Email" class="form-control" />
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.FirstName" class="form-label">First Name</label>
+        <input asp-for="Input.FirstName" class="form-control" />
+        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.LastName" class="form-label">Last Name</label>
+        <input asp-for="Input.LastName" class="form-control" />
+        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.PhoneNumber" class="form-label">Contact Number</label>
+        <input asp-for="Input.PhoneNumber" class="form-control" />
+        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.DateOfBirth" class="form-label">Date of Birth</label>
+        <input asp-for="Input.DateOfBirth" type="date" class="form-control" />
+        <span asp-validation-for="Input.DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Gender" class="form-label">Gender</label>
+        <select asp-for="Input.Gender" class="form-select">
+            <option value="">-- Select --</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <span asp-validation-for="Input.Gender" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Address" class="form-label">Address</label>
+        <textarea asp-for="Input.Address" class="form-control"></textarea>
+        <span asp-validation-for="Input.Address" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="/Reception/Index" class="btn btn-secondary">Back</a>
+</form>

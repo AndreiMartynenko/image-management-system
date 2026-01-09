@@ -1,0 +1,43 @@
+﻿@page "/Admin/Specialties/Edit/{id:int}"
+@using HealthcareIMS.Models
+@namespace HealthcareIMS.Pages.Admin.Specialties
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model EditModel
+
+@{
+    ViewData["Title"] = "Edit Specialty";
+}
+
+<h2>Edit Specialty</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="SpecialtyData.Id" />
+
+    <div class="mb-3">
+        <label asp-for="SpecialtyData.Name" class="form-label"></label>
+        <input asp-for="SpecialtyData.Name" class="form-control" />
+        <span asp-validation-for="SpecialtyData.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SpecialtyData.Description" class="form-label"></label>
+        <input asp-for="SpecialtyData.Description" class="form-control" />
+        <span asp-validation-for="SpecialtyData.Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input asp-for="SpecialtyData.IsActive" class="form-check-input" />
+        <label asp-for="SpecialtyData.IsActive" class="form-check-label"></label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="/Admin/Specialties/Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,46 @@
+﻿@page
+@model HealthcareIMS.Pages.Reports.DoctorPerformanceModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Doctor Performance Report</h2>
+
+    <form method="get" class="row g-3 mb-3">
+        <div class="col-auto">
+            <label>Start Date:</label>
+            <input type="date" asp-for="StartDate" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <label>End Date:</label>
+            <input type="date" asp-for="EndDate" class="form-control" />
+        </div>
+        <div class="col-auto align-self-end">
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </form>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Doctor</th>
+                <th>Specialization</th>
+                <th># of Services</th>
+                <th>Total Service Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.DoctorStats != null)
+            {
+                @foreach (var item in Model.DoctorStats)
+                {
+                    <tr>
+                        <td>@item.DoctorName</td>
+                        <td>@item.Specialization</td>
+                        <td>@item.ServiceCount</td>
+                        <td>@item.TotalCost</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

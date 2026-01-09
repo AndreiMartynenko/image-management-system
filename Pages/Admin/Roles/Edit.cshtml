@@ -1,0 +1,21 @@
+﻿@page "/Admin/Roles/Edit/{id}"
+@namespace HealthcareIMS.Pages.Admin.Roles
+@model EditModel
+
+<h2>Edit Role</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <input type="hidden" asp-for="RoleData.Id" />
+    <div class="mb-3">
+        <label asp-for="RoleData.Name" class="form-label"></label>
+        <input asp-for="RoleData.Name" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="RoleData.NormalizedName" class="form-label"></label>
+        <input asp-for="RoleData.NormalizedName" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="/Admin/Roles/Index" class="btn btn-secondary">Back</a>
+</form>

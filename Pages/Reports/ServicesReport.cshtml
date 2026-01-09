@@ -1,0 +1,57 @@
+﻿@page
+@model HealthcareIMS.Pages.Reports.ServicesReportModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Services Report</h2>
+
+    <form method="get" class="row g-3 mb-3">
+        <div class="col-auto">
+            <label>Start Date:</label>
+            <input type="date" asp-for="StartDate" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <label>End Date:</label>
+            <input type="date" asp-for="EndDate" class="form-control" />
+        </div>
+        <div class="col-auto align-self-end">
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Service ID</th>
+                <th>Service Name</th>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Cost</th>
+                <th>Service Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.ServicesList != null)
+            {
+                @foreach (var svc in Model.ServicesList)
+                {
+                    <tr>
+                        <td>@svc.Id</td>
+                        <td>@svc.ServiceName</td>
+                        <td>@(svc.Patient?.User?.FirstName) @(svc.Patient?.User?.LastName)</td>
+                        <td>@(svc.Doctor?.User?.FirstName) @(svc.Doctor?.User?.LastName)</td>
+                        <td>@svc.ServiceCost</td>
+                        <td>@svc.ServiceDate</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <hr />
+    <div>
+        <strong>Total Services:</strong> @Model.ServicesList.Count
+        <br />
+        <strong>Sum of Service Cost:</strong> @Model.ServicesList.Sum(s => s.ServiceCost)
+    </div>
+</div>

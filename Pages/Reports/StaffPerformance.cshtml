@@ -1,0 +1,78 @@
+﻿@page
+@model HealthcareIMS.Pages.Reports.StaffPerformanceModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Staff Performance Report</h2>
+
+    <form method="get" class="row g-3 mb-3">
+        <div class="col-auto">
+            <label>Start Date:</label>
+            <input type="date" asp-for="StartDate" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <label>End Date:</label>
+            <input type="date" asp-for="EndDate" class="form-control" />
+        </div>
+        <div class="col-auto align-self-end">
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </form>
+
+    @if (Model.DoctorStats != null && Model.DoctorStats.Any())
+    {
+        <h4>Doctors</h4>
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>Doctor</th>
+                    <th>Count of Services</th>
+                    <th>Sum of Service Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DoctorStats)
+                {
+                    <tr>
+                        <td>@item.DoctorName</td>
+                        <td>@item.CountServices</td>
+                        <td>@item.TotalCost</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No data found for Doctors in this range.</p>
+    }
+
+    @if (Model.RadStats != null && Model.RadStats.Any())
+    {
+        <h4>Radiologists</h4>
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>Radiologist</th>
+                    <th>Count of Services</th>
+                    <th>Sum of Service Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.RadStats)
+                {
+                    <tr>
+                        <td>@item.DoctorName</td>
+                        <td>@item.CountServices</td>
+                        <td>@item.TotalCost</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No data found for Radiologists in this range.</p>
+    }
+
+</div>

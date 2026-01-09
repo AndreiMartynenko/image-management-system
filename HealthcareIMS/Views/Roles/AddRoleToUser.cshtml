@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Add Role to User";
+}
+
+<h1>Add Role to User</h1>
+
+<form method="post" asp-action="AddRoleToUser" asp-controller="Roles">
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+    </div>
+    <div>
+        <label for="role">Role:</label>
+        <input type="text" id="role" name="role" required />
+    </div>
+    <button type="submit">Add Role</button>
+</form>

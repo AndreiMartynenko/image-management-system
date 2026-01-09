@@ -1,102 +1,103 @@
-# Image Management System (IMS) - Java Prototype
+# HealthcareIMS
 
-This is a **Java (Spring Boot)** prototype for the CI7250 coursework brief (Image Management System).
+## Overview
+HealthcareIMS is a demo Image Management System (IMS) for ABC Healthcare Group, built with ASP.NET Core Razor Pages, Entity Framework Core, and ASP.NET Core Identity (role-based access).
 
-Check the implementation against the coursework requirements.
-Check the name of the project and the package names.
+It supports:
+- Patient accounts and staff accounts (Reception, Doctor, Radiologist, Accountant, Admin)
+- Visit workflow with time-stamped services/tasks
+- Radiology image upload with classification (MRI/CT/XRay + disease type)
+- Billing (invoice + payments)
+- Reports (e.g., patient history)
 
-Check the name of the objects and their relationships
+## Tech Stack
+- .NET 8 (ASP.NET Core Razor Pages)
+- EF Core
+- ASP.NET Core Identity + Roles
+- SQL Server (DefaultConnection)
 
-## Tech
+## Quick Start
+1. Ensure you have:
+   - .NET SDK 8.x installed
+   - SQL Server / LocalDB available (see `appsettings.json`)
 
-- Java 21
-- Spring Boot (REST API)
-- In-memory storage (no database required for demo)
-- Basic Auth + role-based access
+## Running in Rider (recommended)
+1. Open Rider
+2. `File` -> `Open...`
+3. Select `HealthcareIMS.sln`
+4. Choose the `HealthcareIMS` run configuration and click `Run`
 
-## Build & Run
+If Rider prompts to install a .NET SDK, install **.NET 8 SDK**.
 
-```bash
-mvn -q test
-mvn spring-boot:run
-```
+2. Configure database connection:
+   - Edit `appsettings.json` `ConnectionStrings:DefaultConnection` as needed.
 
-App runs on `http://localhost:8080`.
+3. Create database / apply migrations:
+   - Use Visual Studio migrations tooling or `dotnet ef`.
 
-Health check:
+4. Run:
+   - Run the solution from Visual Studio or `dotnet run`.
 
-```bash
-curl -s http://localhost:8080/actuator/health
-```
+## Seeded Roles and Admin
+On startup, the app seeds roles and a default admin user.
 
-## Authentication
+### Roles
+- Admin
+- Reception
+- Doctor
+- Radiologist
+- Accountant
+- Patient
 
-Basic auth users:
+### Default admin (demo)
+- Email: `admin@abc.com`
+- Password: `123456aA@`
 
-- `radiologist` / `password` (role: STAFF)
-- `doctor` / `password` (role: STAFF)
-- `admin` / `password` (roles: ADMIN, STAFF)
+## Demo Walkthrough (Suggested)
+1. Login as Admin
+   - Confirm roles exist
+   - Create/assign users to roles (Reception/Doctor/Radiologist/Accountant)
+   - Create ServiceDefinitions (name/category/cost)
 
-## Demo API (examples)
+2. Reception
+   - Create a patient account
+   - Open Manage Visit/Services
+   - Search/select patient -> open visit
+   - Add services to the visit (assign doctor optional)
 
-### Create a patient (STAFF)
+3. Radiologist
+   - Open assigned Radiology service
+   - Upload an image + select Imaging Type and Disease Type
+   - Add diagnosis/comments
+   - Optionally refer to another department
 
-```bash
-curl -u radiologist:password -H 'Content-Type: application/json' \
-  -d '{"name":"John Doe","address":"Kingston","conditions":"lung","diagnosis":"pending"}' \
-  http://localhost:8080/api/staff/patients
-```
+4. Doctor
+   - Open DoctorVisit service
+   - Add diagnosis/comments
+   - Finish visit or refer
 
-### List patients (STAFF)
+5. Accountant
+   - Open invoices
+   - Add payment(s) and check payment status changes
 
-```bash
-curl -u radiologist:password http://localhost:8080/api/staff/patients
-```
+## Security Note
+CSRF (anti-forgery) protection is enabled. All POST forms should include anti-forgery tokens.
 
-### Add a workflow task (STAFF)
+## Submission Cleanup Checklist (recommended)
+Before submitting (zip/upload), remove build artifacts and unused folders:
 
-```bash
-curl -u doctor:password -H 'Content-Type: application/json' \
-  -d '{"type":"UPLOAD_IMAGE","cost":20.00,"performedBy":"doctor"}' \
-  http://localhost:8080/api/staff/workflow/patients/1001/tasks
-```
+- Delete folders:
+  - `bin/`
+  - `obj/`
+  - `.vs/`
+- Delete files:
+  - `*.csproj.user`
+  - `.DS_Store`
 
-### List workflow tasks for a patient (STAFF)
+### Remove unused legacy app folder
+This repo contains an older duplicate app under `HealthcareIMS/HealthcareIMS` which is not referenced by `HealthcareIMS.sln`.
 
-```bash
-curl -u doctor:password http://localhost:8080/api/staff/workflow/patients/1001/tasks
-```
-
-### Upload image metadata (STAFF)
-
-```bash
-curl -u radiologist:password -H 'Content-Type: application/json' \
-  -d '{"modality":"MRI","diseaseTag":"brain_cancer"}' \
-  http://localhost:8080/api/staff/images/patients/1001
-```
-
-### List images for a patient (STAFF)
-
-```bash
-curl -u radiologist:password http://localhost:8080/api/staff/images/patients/1001
-```
-
-### Create staff record (ADMIN)
-
-```bash
-curl -u admin:password -H 'Content-Type: application/json' \
-  -d '{"name":"Dr Smith","role":"Radiologist"}' \
-  http://localhost:8080/api/admin/staff
-```
-
-## Notes for the coursework
-
-- The code is structured in components:
-  - `domain` (entities)
-  - `repo` (in-memory repositories)
-  - `service` (business logic)
-  - `web` (REST controllers)
-  - `config` (security)
-
-This provides a clear **service-oriented/modular** design and can be extended with a database later (e.g. PostgreSQL) or split into microservices.
-
+Safe approach:
+1. Rename `HealthcareIMS/HealthcareIMS` -> `HealthcareIMS/_OLD_HealthcareIMS_BACKUP`
+2. Run the solution in Rider
+3. If everything still runs, delete `_OLD_HealthcareIMS_BACKUP` before submission

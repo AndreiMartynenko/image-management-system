@@ -1,0 +1,45 @@
+﻿@page "/Admin/Users/Details/{id}"
+@namespace HealthcareIMS.Pages.Admin.Users
+@model DetailsModel
+
+<h2>User Details</h2>
+
+@if (Model.UserData == null)
+{
+    <div class="alert alert-danger">User not found.</div>
+}
+else
+{
+    <dl class="row">
+        <dt class="col-sm-2">UserName</dt>
+        <dd class="col-sm-10">@Model.UserData.UserName</dd>
+
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.UserData.Email</dd>
+
+        <dt class="col-sm-2">PhoneNumber</dt>
+        <dd class="col-sm-10">@Model.UserData.PhoneNumber</dd>
+
+        <dt class="col-sm-2">FullName</dt>
+        <dd class="col-sm-10">@Model.UserData.FirstName @Model.UserData.LastName</dd>
+
+        <dt class="col-sm-2">DateOfBirth</dt>
+        <dd class="col-sm-10">@Model.UserData.DateOfBirth</dd>
+
+        <dt class="col-sm-2">Gender</dt>
+        <dd class="col-sm-10">@Model.UserData.Gender</dd>
+
+        <dt class="col-sm-2">Address</dt>
+        <dd class="col-sm-10">@Model.UserData.Address</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.UserData.Status</dd>
+
+        <dt class="col-sm-2">Roles</dt>
+        <dd class="col-sm-10">@Model.RolesString</dd>
+    </dl>
+
+    <p>
+        <a asp-page="/Admin/Users/Index" class="btn btn-secondary">Back</a>
+    </p>
+}

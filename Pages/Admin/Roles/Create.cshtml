@@ -1,0 +1,18 @@
+﻿@page "/Admin/Roles/Create"
+@namespace HealthcareIMS.Pages.Admin.Roles
+@model CreateModel
+
+<h2>Create Role</h2>
+
+<!-- نمایش خطاهای اعتبارسنجی -->
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="RoleName" class="form-label">Role Name</label>
+        <input asp-for="RoleName" class="form-control" />
+        <span asp-validation-for="RoleName" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="/Admin/Roles/Index" class="btn btn-secondary">Back</a>
+</form>

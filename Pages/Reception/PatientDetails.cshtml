@@ -1,0 +1,59 @@
+﻿@page "/Reception/PatientDetails/{id:int}"
+@namespace HealthcareIMS.Pages.Reception
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model PatientDetailsModel
+
+@{
+    ViewData["Title"] = "Patient Details";
+}
+
+<h2>Patient Details</h2>
+
+@if (Model.PatientData == null)
+{
+    <div class="alert alert-danger">
+        Patient not found.
+    </div>
+}
+else
+{
+    <form method="post">
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" asp-for="PatientData.Id" />
+
+        <div class="mb-3">
+            <label asp-for="PatientData.User.FirstName" class="form-label">First Name</label>
+            <input asp-for="PatientData.User.FirstName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PatientData.User.LastName" class="form-label">Last Name</label>
+            <input asp-for="PatientData.User.LastName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PatientData.User.DateOfBirth" class="form-label">Date Of Birth</label>
+            <input asp-for="PatientData.User.DateOfBirth" type="date" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PatientData.User.Gender" class="form-label">Gender</label>
+            <input asp-for="PatientData.User.Gender" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PatientData.User.PhoneNumber" class="form-label">Contact Number</label>
+            <input asp-for="PatientData.User.PhoneNumber" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PatientData.User.Address" class="form-label">Address</label>
+            <textarea asp-for="PatientData.User.Address" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-page="/Reception/Index" class="btn btn-secondary">Back</a>
+    </form>
+
+}

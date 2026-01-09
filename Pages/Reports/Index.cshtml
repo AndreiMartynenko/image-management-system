@@ -1,0 +1,96 @@
+﻿@page
+@model HealthcareIMS.Pages.Reports.IndexModel
+@namespace HealthcareIMS.Pages.Reports
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Reports Dashboard";
+}
+
+<div class="container mt-4">
+    <h2>Reports Dashboard</h2>
+    <p class="text-muted">Select a report from the list below.</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <!-- مثلاً گزارش تاریخچه بیمار -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="card-title mb-0">Patient History</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">View a patient's entire history of visits & services.</p>
+                    <a asp-page="/Reports/PatientHistory" class="btn btn-outline-info">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- گزارش Financial -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5 class="card-title mb-0">Financial Report</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Check invoices & payments in a date range.</p>
+                    <a asp-page="/Reports/FinancialReport" class="btn btn-outline-success">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- گزارش DoctorPerformance یا StaffPerformance -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Staff Performance</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">View performance metrics for doctors & radiologists.</p>
+                    <a asp-page="/Reports/StaffPerformance" class="btn btn-outline-primary">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- گزارش ImageClassificationReport -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="card-title mb-0">Image Classification</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Filter imaging data by type & disease classification.</p>
+                    <a asp-page="/Reports/ImageClassificationReport" class="btn btn-outline-warning">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- بسته به گزارش‌هایی که دارید، کارت‌های بیشتری بسازید: PatientReport, RadiologyReport, etc. -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="card-title mb-0">Radiology Report</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Advanced stats about radiology images & services.</p>
+                    <a asp-page="/Reports/RadiologyReport" class="btn btn-outline-danger">Open</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- مثالی برای VisitsReport -->
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="card-title mb-0">Visits Report</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Check all visits in a date range or filter by status.</p>
+                    <a asp-page="/Reports/VisitsReport" class="btn btn-outline-secondary">Open</a>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- row -->
+
+</div> <!-- container -->

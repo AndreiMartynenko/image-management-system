@@ -1,0 +1,66 @@
+﻿@page "/Admin/Users/Create"
+@namespace HealthcareIMS.Pages.Admin.Users
+@model CreateModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Create User (Admin)</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Input.Email" class="form-label">Email</label>
+        <input asp-for="Input.Email" class="form-control" />
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.PhoneNumber" class="form-label">Phone Number</label>
+        <input asp-for="Input.PhoneNumber" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.FirstName" class="form-label">First Name</label>
+        <input asp-for="Input.FirstName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.LastName" class="form-label">Last Name</label>
+        <input asp-for="Input.LastName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.DateOfBirth" class="form-label">Date Of Birth</label>
+        <input asp-for="Input.DateOfBirth" type="date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Gender" class="form-label">Gender</label>
+        <input asp-for="Input.Gender" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Address" class="form-label">Address</label>
+        <textarea asp-for="Input.Address" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Status" class="form-label">Status</label>
+        <input asp-for="Input.Status" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Password" class="form-label">Password</label>
+        <input asp-for="Input.Password" class="form-control" />
+        <span asp-validation-for="Input.Password" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.ConfirmPassword" class="form-label">Confirm Password</label>
+        <input asp-for="Input.ConfirmPassword" class="form-control" />
+        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="/Admin/Users/Index" class="btn btn-secondary">Back</a>
+</form>

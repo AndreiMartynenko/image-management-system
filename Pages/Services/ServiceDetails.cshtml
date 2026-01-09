@@ -1,0 +1,32 @@
+﻿@page "{id:int}"
+@model ServiceDetailsModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Service Details</h2>
+
+    @if (Model.ServiceData == null)
+    {
+        <div class="alert alert-danger">Service not found.</div>
+        <a asp-page="/Reception/ManageVisitServices" class="btn btn-secondary">Back</a>
+    }
+    else
+    {
+        <div class="card mb-3">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="card-title mb-0">@Model.ServiceData.ServiceName Details</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Service Category:</strong> @Model.ServiceData.ServiceCategory</p>
+                <p><strong>Cost:</strong> @Model.ServiceData.ServiceCost</p>
+                <p><strong>Status:</strong> @Model.ServiceData.ServiceStatus</p>
+                <p><strong>Doctor:</strong> @(Model.ServiceData.Doctor?.User?.FirstName) @(Model.ServiceData.Doctor?.User?.LastName)</p>
+                <p><strong>Service Date:</strong> @Model.ServiceData.ServiceDate</p>
+                <p><strong>Diagnosis:</strong> @Model.ServiceData.Diagnosis</p>
+                <p><strong>Comments:</strong> @Model.ServiceData.Comments</p>
+            </div>
+        </div>
+
+        <a asp-page="/Reception/ManageVisitServices" class="btn btn-secondary">Back</a>
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@page
+@model HealthcareIMS.Pages.Radiologist.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <div>
+        <h2 class="mb-1">Radiologist Dashboard</h2>
+        <div class="ims-muted">Upload imaging, record classification, and confirm radiology reports.</div>
+    </div>
+    <div>
+        <a asp-page="/Radiologist/CaptureImage" class="btn btn-outline-light">Capture Image</a>
+    </div>
+</div>
+
+<div class="ims-card p-3">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+        <h5 class="mb-0">Radiology Services</h5>
+        <span class="ims-muted small">@Model.RadServices?.Count() service(s)</span>
+    </div>
+
+    <table class="table table-striped mb-0">
+        <thead>
+            <tr>
+                <th>Service ID</th>
+                <th>Patient</th>
+                <th>Service</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in Model.RadServices)
+            {
+                <tr>
+                    <td>@s.Id</td>
+                    <td>@(s.Patient?.User?.FirstName) @(s.Patient?.User?.LastName)</td>
+                    <td>@(s.ServiceName) <span class="ims-muted">(@s.ServiceCategory)</span></td>
+                    <td>
+                        <span class="badge text-bg-secondary">@s.ServiceStatus</span>
+                    </td>
+                    <td>@s.ServiceDate.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td class="text-end">
+                        <a asp-page="/Radiologist/ServiceDetails" asp-route-serviceId="@s.Id" class="btn btn-primary btn-sm">Open</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

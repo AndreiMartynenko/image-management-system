@@ -1,0 +1,61 @@
+﻿@page
+@model HealthcareIMS.Pages.Reports.FinancialReportModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Financial Report</h2>
+
+    <form method="get" class="row g-3 mb-3">
+        <div class="col-auto">
+            <label>Start Date:</label>
+            <input type="date" asp-for="StartDate" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <label>End Date:</label>
+            <input type="date" asp-for="EndDate" class="form-control" />
+        </div>
+        <div class="col-auto align-self-end">
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </form>
+
+    @if (Model.Invoices != null && Model.Invoices.Any())
+    {
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>Invoice ID</th>
+                    <th>Visit ID</th>
+                    <th>Total Amount</th>
+                    <th>Paid Amount</th>
+                    <th>Payment Status</th>
+                    <th>Issued Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var inv in Model.Invoices)
+                {
+                    <tr>
+                        <td>@inv.Id</td>
+                        <td>@inv.VisitId</td>
+                        <td>@inv.TotalAmount</td>
+                        <td>@inv.PaidAmount</td>
+                        <td>@inv.PaymentStatus</td>
+                        <td>@inv.IssuedDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <hr />
+        <p>
+            <strong>Total Invoices:</strong> @Model.Invoices.Count <br />
+            <strong>Sum of TotalAmount:</strong> @Model.Invoices.Sum(i => i.TotalAmount) <br />
+            <strong>Sum of PaidAmount:</strong> @Model.Invoices.Sum(i => i.PaidAmount)
+        </p>
+    }
+    else
+    {
+        <p>No invoices found for this filter.</p>
+    }
+</div>

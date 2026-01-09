@@ -1,0 +1,144 @@
+﻿@page "{id:int}"
+@model HealthcareIMS.Pages.Accountant.InvoiceDetailsModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+
+    <div class="row">
+        <div class="col-md-8">
+            <!-- کارت حاوی اطلاعات کل فاکتور -->
+            <div class="card mb-4">
+                
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Invoice # @Model.Invoice.Id Details</h5>
+                </div>
+                <div class="card-body">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4">Patient</dt>
+                        <dd class="col-sm-8">
+                            @(Model.Invoice.Visit?.Patient?.User?.FirstName) @(Model.Invoice.Visit?.Patient?.User?.LastName)
+                        </dd>
+                        <dt class="col-sm-4">Total Amount</dt>
+                        <dd class="col-sm-8">@Model.Invoice.TotalAmount</dd>
+
+                        <dt class="col-sm-4">Paid Amount</dt>
+                        <dd class="col-sm-8">@Model.Invoice.PaidAmount</dd>
+
+                        <dt class="col-sm-4">Remaining Amount</dt>
+                        <dd class="col-sm-8">
+                            @(Model.Invoice.TotalAmount - Model.Invoice.PaidAmount)
+                        </dd>
+
+                        <dt class="col-sm-4">Issued Date</dt>
+                        <dd class="col-sm-8">@Model.Invoice.IssuedDate</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- جدول نمایش پرداخت‌ها -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Payments</h5>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Payment ID</th>
+                                <th>Amount</th>
+                                <th>Method</th>
+                                <th>Payment Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var payment in Model.Invoice.Payments)
+                            {
+                                <tr>
+                                    <td>@payment.Id</td>
+                                    <td>@payment.Amount</td>
+                                    <td>@payment.PaymentMethod</td>
+                                    <td>@payment.PaymentDate</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- لیست سرویس‌های مربوط به این فاکتور -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Services Related to This Invoice</h5>
+                </div>
+                <div class="card-body p-0">
+                    @if (Model.Invoice.Visit?.Services != null && Model.Invoice.Visit.Services.Any())
+                    {
+                        <table class="table mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Service Name</th>
+                                    <th>Cost</th>
+                                    <th>Status</th>
+                                    <th>Doctor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var svc in Model.Invoice.Visit.Services)
+                                {
+                                    <tr>
+                                        <td>@svc.ServiceName</td>
+                                        <td>@svc.ServiceCost</td>
+                                        <td>@svc.ServiceStatus</td>
+                                        <td>@(svc.Doctor?.User?.FirstName) @(svc.Doctor?.User?.LastName)</td>
+                                    </tr>
+                                }
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="p-3">
+                            <em>No services found.</em>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- فرم افزودن پرداخت در ستون کناری -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Add Payment</h5>
+                </div>
+                <div class="card-body">
+                    <!-- نمایش خطاها (در صورت پرداخت مبلغ بیش از باقیمانده) -->
+                    <div asp-validation-summary="All" class="text-danger mb-2"></div>
+
+                    <form method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" asp-for="Invoice.Id" />
+
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount</label>
+                            <input type="number" step="0.01" class="form-control" id="amount" name="amount" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label">Payment Method</label>
+                            <select id="paymentMethod" name="paymentMethod" class="form-select" required>
+                                <option value="Cash">Cash</option>
+                                <option value="Card">Card</option>
+                                <option value="Insurance">Insurance</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Add Payment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- row -->
+</div><!-- container -->

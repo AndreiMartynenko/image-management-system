@@ -1,0 +1,37 @@
+﻿@page "/Admin/Dashboard/Index"
+@namespace HealthcareIMS.Pages.Admin.Dashboard
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card bg-light mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Active Patients</h5>
+                <p class="card-text display-4">@Model.ActivePatientsCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-light mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Active Doctors</h5>
+                <p class="card-text display-4">@Model.ActiveDoctorsCount</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-light mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Payments This Month</h5>
+                <p class="card-text display-4">@Model.PaymentsSumThisMonth</p>
+            </div>
+        </div>
+    </div>
+</div>

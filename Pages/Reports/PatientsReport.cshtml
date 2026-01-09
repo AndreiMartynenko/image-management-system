@@ -1,0 +1,32 @@
+﻿@page
+@model HealthcareIMS.Pages.Reports.PatientsReportModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Patients Report</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th># of Visits</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.PatientStats != null)
+            {
+                @foreach (var item in Model.PatientStats)
+                {
+                    <tr>
+                        <td>@item.PatientId</td>
+                        <td>@item.PatientName</td>
+                        <td>@item.Gender</td>
+                        <td>@item.VisitCount</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

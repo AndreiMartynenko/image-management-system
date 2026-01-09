@@ -1,0 +1,32 @@
+﻿@page "/Admin/Roles/Index"
+@namespace HealthcareIMS.Pages.Admin.Roles
+@model IndexModel
+
+<h2>Roles</h2>
+
+<p>
+    <a asp-page="/Admin/Roles/Create" class="btn btn-primary">Create New Role</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Role Name</th>
+            <th>NormalizedName</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model.RolesList)
+        {
+            <tr>
+                <td>@role.Name</td>
+                <td>@role.NormalizedName</td>
+                <td>
+                    <a asp-page="/Admin/Roles/Edit" asp-route-id="@role.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-page="/Admin/Roles/Delete" asp-route-id="@role.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

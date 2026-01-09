@@ -1,0 +1,67 @@
+﻿@page "/Radiologist/CaptureImage/{appointmentId:int}"
+@model HealthcareIMS.Pages.Radiologist.CaptureImageModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container mt-4">
+    <h2>Capture New Image</h2>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    @if (Model.AppointmentData == null)
+    {
+        <div class="alert alert-danger">Appointment not found.</div>
+        <a asp-page="/Radiologist/Index" class="btn btn-secondary">Back</a>
+    }
+    else
+    {
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="card-title mb-0">Appointment Details</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Patient:</strong> @Model.PatientName</p>
+                <p><strong>Appointment Date:</strong> @Model.AppointmentData.AppointmentDate.ToString("yyyy-MM-dd HH:mm")</p>
+            </div>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="AppointmentId" />
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">Imaging Type</label>
+                    <select asp-for="ImagingType" class="form-select">
+                        <option value="">-- Select --</option>
+                        <option value="MRI">MRI</option>
+                        <option value="CT">CT</option>
+                        <option value="XRay">XRay</option>
+                        <option value="Ultrasound">Ultrasound</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Disease Type</label>
+                    <input asp-for="DiseaseType" class="form-control" placeholder="e.g. Lung Cancer" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Select Image File</label>
+                <input type="file" name="ImageFile" class="form-control" accept="image/*" required />
+            </div>
+
+            <!-- سایر فیلدهای دلخواه مثل BodyPart, Comments, ... -->
+            <div class="mb-3">
+                <label class="form-label">Body Part (Optional)</label>
+                <input asp-for="BodyPart" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Any Comments</label>
+                <textarea asp-for="Comments" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Upload Image</button>
+            <a asp-page="/Radiologist/Index" class="btn btn-secondary">Back</a>
+        </form>
+    }
+</div>

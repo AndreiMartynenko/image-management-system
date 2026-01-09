@@ -1,0 +1,49 @@
+﻿@page "/Admin/ServiceDefinitions/Create"
+@using HealthcareIMS.Models
+@namespace HealthcareIMS.Pages.Admin.ServiceDefinitions
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model CreateModel
+
+@{
+    ViewData["Title"] = "Create Service Definition";
+}
+
+<h2>Create Service Definition</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        <label asp-for="ServiceDef.Name" class="form-label">Service Name</label>
+        <input asp-for="ServiceDef.Name" class="form-control" placeholder="e.g. Doctor Visit" />
+        <span asp-validation-for="ServiceDef.Name" class="text-danger"></span>
+        <small class="text-muted">Enter a descriptive name for the service.</small>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ServiceDef.Category" class="form-label">Service Category</label>
+        <input asp-for="ServiceDef.Category" class="form-control" placeholder="e.g. Visit, Imaging ..." />
+        <span asp-validation-for="ServiceDef.Category" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ServiceDef.DefaultCost" class="form-label">Service Cost</label>
+        <input asp-for="ServiceDef.DefaultCost" type="number" step="0.01" class="form-control" placeholder="e.g. 150" />
+        <span asp-validation-for="ServiceDef.DefaultCost" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input asp-for="ServiceDef.IsActive" class="form-check-input" type="checkbox" />
+        <label asp-for="ServiceDef.IsActive" class="form-check-label"></label>
+        <span asp-validation-for="ServiceDef.IsActive" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a href="/Admin/ServiceDefinitions/Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

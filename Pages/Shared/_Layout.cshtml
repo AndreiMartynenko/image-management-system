@@ -1,0 +1,207 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@using HealthcareIMS.Models
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ABC Healthcare IMS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <!-- Top navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light ims-navbar">
+            <div class="container-fluid">
+                <!-- Brand -->
+                <a class="navbar-brand fw-bold ims-brand" asp-page="/Index">
+                    Aurora Healthcare IMS
+                </a>
+
+                <!-- Mobile toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Right side -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @User.Identity.Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li>
+                                        <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage">Profile</a>
+                                    </li>
+                                    <li>
+                                        <form method="post" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/">
+                                            <button type="submit" class="dropdown-item">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid ims-shell">
+        <div class="row flex-nowrap">
+            <!-- Left sidebar -->
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 ims-sidebar" id="sidebarMenu">
+
+                <ul class="nav nav-pills flex-column mb-auto mt-3" id="sidebar-nav">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/Dashboard/Index">
+                                Admin Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/Users/Index">
+                                User Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/Roles/Index">
+                                Role Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/ServiceDefinitions/Index">
+                                Service Management
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Admin/Specialties/Index">
+                                Specialty Management
+                            </a>
+                        </li>
+                    }
+
+
+                    @if (User.IsInRole("Reception"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Reception/Index">
+                                Reception Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Reception/CreatePatient">
+                                Create Patient
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Reception/ManageVisitServices">
+                                Manage Visit/Services
+                            </a>
+                        </li>
+                    }
+
+
+
+                    @if (User.IsInRole("Doctor"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Doctor/Index">
+                                Doctor Dashboard
+                            </a>
+                        </li>
+                      
+                    }
+
+
+                    @if (User.IsInRole("Radiologist"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Radiologist/Index">
+                                Radiologist Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Radiologist/CaptureImage">
+                                Capture Image
+                            </a>
+                        </li>
+                        
+
+                    }
+                    @if (User.IsInRole("Accountant"))
+                    {
+                        <!-- Sidebar section -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Accountant/Invoices">
+                                Accountant Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-page="/Accountant/AllInvoices" class="nav-link">
+                                All Invoices
+                            </a>
+                        </li>
+                        
+
+                    }
+                    @{
+                        var allowedRoles = new List<string> { "Accountant", "Radiologist", "Admin" , "Doctor" };
+                        bool hasAccess = allowedRoles.Any(role => User.IsInRole(role));
+                    }
+
+                    @if (hasAccess)
+                    {
+
+						<!-- Sidebar section -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Reports/Index">Reports</a>
+                        </li>
+
+					}
+
+                    else
+                    {
+                        <!-- If not logged in or no recognized role -->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Index">
+                                Home
+                            </a>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+
+            <!-- Main content -->
+            <main class="col py-3 ims-content">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

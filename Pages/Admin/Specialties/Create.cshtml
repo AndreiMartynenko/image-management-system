@@ -1,0 +1,42 @@
+﻿@page "/Admin/Specialties/Create"
+@using HealthcareIMS.Models
+@namespace HealthcareIMS.Pages.Admin.Specialties
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model CreateModel
+
+@{
+    ViewData["Title"] = "Create Specialty";
+}
+
+<h2>Create Specialty</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        <label asp-for="SpecialtyData.Name" class="form-label">Name</label>
+        <input asp-for="SpecialtyData.Name" class="form-control" placeholder="e.g. Cardiology" />
+        <span asp-validation-for="SpecialtyData.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SpecialtyData.Description" class="form-label">Description</label>
+        <input asp-for="SpecialtyData.Description" class="form-control" placeholder="Description..." />
+        <span asp-validation-for="SpecialtyData.Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input asp-for="SpecialtyData.IsActive" class="form-check-input" type="checkbox" />
+        <label asp-for="SpecialtyData.IsActive" class="form-check-label"></label>
+        <span asp-validation-for="SpecialtyData.IsActive" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a href="/Admin/Specialties/Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

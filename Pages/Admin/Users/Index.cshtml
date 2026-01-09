@@ -1,0 +1,40 @@
+﻿@page "/Admin/Users/Index"
+@namespace HealthcareIMS.Pages.Admin.Users
+@model IndexModel
+
+<h2>Users</h2>
+
+<p>
+    <a asp-page="/Admin/Users/Create" class="btn btn-primary">Create New User</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+            <th>Full Name</th>
+            <th>Roles</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model.UsersList)
+        {
+            <tr>
+                <td>@u.UserName</td>
+                <td>@u.Email</td>
+                <td>@u.PhoneNumber</td>
+                <td>@(u.FirstName + " " + u.LastName)</td>
+                <td>@Model.GetRolesString(u.Id)</td>
+                <td>
+                    <a asp-page="/Admin/Users/Edit" asp-route-id="@u.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-page="/Admin/Users/Details" asp-route-id="@u.Id" class="btn btn-sm btn-info">Details</a>
+                    <a asp-page="/Admin/Users/AssignRoles" asp-route-id="@u.Id" class="btn btn-sm btn-success">Roles</a>
+                    <!-- Delete if you want. Or Lock. -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
