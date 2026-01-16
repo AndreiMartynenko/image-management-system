@@ -29,11 +29,11 @@ namespace HealthcareIMS.Pages.Reception
         [BindProperty]
         public int? OpenVisitId { get; set; }
 
-        // Step 1: select Category
+        // مرحله اول: انتخاب Category
         [BindProperty]
         public string SelectedCategory { get; set; }
 
-        // Step 2: select ServiceDefinition (within selected category)
+        // مرحله دوم: انتخاب ServiceDefinition (در همان دسته)
         [BindProperty]
         public int? SelectedServiceDefinitionId { get; set; }
 
@@ -42,18 +42,18 @@ namespace HealthcareIMS.Pages.Reception
 
         public List<Patient> FoundPatients { get; set; }
 
-        // List of service categories
+        // لیست دسته‌های سرویس (Categoryها)
         public List<string> AllCategories { get; set; }
 
-        // List of ServiceDefinitions for the selected category
+        // لیست ServiceDefinitionهای همین دسته
         public List<ServiceDefinition> FilteredServiceDefinitions { get; set; }
 
-        // Doctors
+        // دکترها
         public List<HealthcareIMS.Models.Doctor> Doctors { get; set; }
 
         public List<Service> ServicesOfVisit { get; set; }
 
-        // Selected patient
+        // نمایش بیمار انتخابی
         public Patient SelectedPatient
         {
             get
@@ -78,24 +78,24 @@ namespace HealthcareIMS.Pages.Reception
                 ServicesOfVisit = await _context.Services
                     .Where(s => s.VisitId == OpenVisitId.Value)
                     .Include(s => s.Doctor).ThenInclude(d => d.User)
-                    .OrderBy(s => s.ServiceDate) // Sort by date
+                    .OrderBy(s => s.ServiceDate) // مرتب بر اساس تاریخ
                     .ToListAsync();
             }
         }
 
         private async Task LoadDropdowns()
         {
-            // Doctors
+            // دکترها
             Doctors = await _context.Doctors
                 .Include(d => d.User)
                 .ToListAsync();
 
-            // All ServiceDefinitions
+            // همه ServiceDefinitions
             var defs = await _context.ServiceDefinitions
                 .Where(sd => sd.IsActive)
                 .ToListAsync();
 
-            // Step 1: Category list
+            // مرحله اول: لیست Category
             AllCategories = defs
                 .Select(sd => sd.Category)
                 .Where(c => !string.IsNullOrEmpty(c))
@@ -103,7 +103,7 @@ namespace HealthcareIMS.Pages.Reception
                 .OrderBy(c => c)
                 .ToList();
 
-            // If SelectedCategory is set, load ServiceDefinitions for that category
+            // اگر SelectedCategory پر باشد، لیست ServiceDefinitionهای همان دسته را می‌گیریم
             if (!string.IsNullOrEmpty(SelectedCategory))
             {
                 FilteredServiceDefinitions = defs
@@ -154,14 +154,14 @@ namespace HealthcareIMS.Pages.Reception
 
             PatientId = pat.Id;
 
-            // Find an open visit
+            // ویزیت باز؟
             var visit = await _context.Visits
                 .Where(v => v.PatientId == pat.Id && v.VisitStatus == "Open")
                 .FirstOrDefaultAsync();
 
             if (visit == null)
             {
-                // Create a new visit
+                // بساز
                 visit = new Visit
                 {
                     PatientId = pat.Id,
@@ -187,7 +187,7 @@ namespace HealthcareIMS.Pages.Reception
         // AddService
         public async Task<IActionResult> OnPostAddServiceAsync()
         {
-            // Ensure Patient and Visit are selected
+            // اطمینان از اینکه Patient و Visit انتخاب شده
             if (!PatientId.HasValue || !OpenVisitId.HasValue)
             {
                 ModelState.AddModelError("", "No patient or visit is selected!");
@@ -218,7 +218,7 @@ namespace HealthcareIMS.Pages.Reception
                 return Page();
             }
 
-            // Create service
+            // ساخت سرویس
             var newService = new Service
             {
                 VisitId = visit.Id,
@@ -250,7 +250,7 @@ namespace HealthcareIMS.Pages.Reception
             _context.Services.Add(newService);
             await _context.SaveChangesAsync();
 
-            // Optionally create an Appointment
+            // اگر می‌خواهید Appointment هم بسازید
             var appt = new Appointment
             {
                 PatientId = visit.PatientId,
@@ -261,13 +261,13 @@ namespace HealthcareIMS.Pages.Reception
             _context.Appointments.Add(appt);
             await _context.SaveChangesAsync();
 
-            // Update total cost on Visit
+            // به‌روزرسانی TotalCost در Visit
             if (visit.TotalCost == null) visit.TotalCost = 0;
             visit.TotalCost += sd.DefaultCost;
             _context.Visits.Update(visit);
             await _context.SaveChangesAsync();
 
-            // Update or create Invoice
+            // بروزرسانی یا ایجاد Invoice
             var invoice = await _context.Invoices.FirstOrDefaultAsync(i => i.VisitId == visit.Id);
             if (invoice == null)
             {
@@ -283,7 +283,7 @@ namespace HealthcareIMS.Pages.Reception
             invoice.TotalAmount += sd.DefaultCost;
             await _context.SaveChangesAsync();
 
-            // Services list
+            // لیست سرویس‌ها
             ServicesOfVisit = await _context.Services
                 .Where(s => s.VisitId == visit.Id)
                 .Include(s => s.Doctor).ThenInclude(d => d.User)
@@ -292,7 +292,7 @@ namespace HealthcareIMS.Pages.Reception
 
             await LoadDropdowns();
 
-            // Reset dropdown values
+            // مقدار dropdown را ریست کنیم
             SelectedCategory = null;
             SelectedServiceDefinitionId = null;
 
@@ -319,7 +319,7 @@ namespace HealthcareIMS.Pages.Reception
 
             _context.Services.Remove(svc);
 
-            // Remove Appointment
+            // حذف Appointment
             var appt = await _context.Appointments
                 .Where(a => a.PatientId == svc.PatientId && a.DoctorId == svc.DoctorId)
                 .OrderByDescending(a => a.Id)

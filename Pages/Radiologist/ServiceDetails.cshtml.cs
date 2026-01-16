@@ -46,7 +46,7 @@ namespace HealthcareIMS.Pages.Radiologist
         {
             var userId = _userManager.GetUserId(User);
 
-            // Radiologist role
+            // نقش Radiologist
             if (!User.IsInRole("Radiologist"))
                 return Forbid();
 
@@ -57,7 +57,7 @@ namespace HealthcareIMS.Pages.Radiologist
             if (svc == null)
                 return NotFound();
 
-            // If service category != "Radiology" then forbid
+            // اگر سرویس Category != "Radiology" -> forbid
             if (svc.ServiceCategory != "Radiology")
             {
                 return Forbid();
@@ -108,7 +108,7 @@ namespace HealthcareIMS.Pages.Radiologist
             }
         }
 
-        // Update Diagnosis/Comments
+        // آپدیت Diagnosis/Comments
         public async Task<IActionResult> OnPostUpdateDiagnosisAsync(int serviceId)
         {
             var userId = _userManager.GetUserId(User);
@@ -117,7 +117,7 @@ namespace HealthcareIMS.Pages.Radiologist
             if (svc == null)
                 return NotFound();
 
-            // Check category
+            // کنترل Category
             if (svc.ServiceCategory != "Radiology")
             {
                 return Forbid();
@@ -158,14 +158,14 @@ namespace HealthcareIMS.Pages.Radiologist
             return RedirectToPage("/Radiologist/Index");
         }
 
-        // Change category on submit
+        // تغییر Category onsubmit
         public async Task<IActionResult> OnPost(int serviceId, string dummy = null)
         {
             return await OnGetAsync(serviceId);
         }
 
-        // Upload image
-        public async Task<IActionResult> OnPostUploadImageAsync(int serviceId, IFormFile ImageFile, string ImagingType, string DiseaseType)
+        // آپلود تصویر
+        public async Task<IActionResult> OnPostUploadImageAsync(int serviceId, IFormFile ImageFile)
         {
             var svc = await _context.Services.FindAsync(serviceId);
             if (svc == null) return NotFound();
@@ -197,8 +197,8 @@ namespace HealthcareIMS.Pages.Radiologist
             var imaging = new Imaging
             {
                 VisitId = svc.VisitId,
-                ImagingType = string.IsNullOrWhiteSpace(ImagingType) ? "Unknown" : ImagingType,
-                DiseaseType = string.IsNullOrWhiteSpace(DiseaseType) ? "Unknown" : DiseaseType, // NOT NULL column
+                ImagingType = "Unknown",
+                DiseaseType = "Unknown", // ستون NOT NULL
                 ImageFile = $"/uploads/imaging/{uniqueName}",
                 CaptureDate = DateTime.Now,
                 CapturedBy = User.Identity.Name,

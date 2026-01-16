@@ -2,9 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HealthcareIMS.Pages.Admin.Dashboard
 {
@@ -33,12 +30,9 @@ namespace HealthcareIMS.Pages.Admin.Dashboard
 
             // مجموع پرداخت‌های ماه جاری
             var startOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            var paymentAmounts = await _context.Payments
+            PaymentsSumThisMonth = await _context.Payments
                 .Where(pm => pm.PaymentDate >= startOfMonth)
-                .Select(pm => pm.Amount)
-                .ToListAsync();
-
-            PaymentsSumThisMonth = paymentAmounts.Sum();
+                .SumAsync(pm => (decimal?)pm.Amount) ?? 0;
         }
 
     }

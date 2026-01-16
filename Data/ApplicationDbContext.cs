@@ -11,7 +11,7 @@ namespace HealthcareIMS.Data
         {
         }
 
-        // Core tables
+        // جداول اصلی ما
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Visit> Visits { get; set; }
         public DbSet<Service> Services { get; set; }

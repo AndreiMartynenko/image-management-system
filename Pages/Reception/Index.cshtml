@@ -3,90 +3,74 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model IndexModel
 
-@{ 
+@{
     ViewData["Title"] = "Reception Dashboard";
 }
 
-<div class="d-flex align-items-center justify-content-between mb-3">
-    <div>
-        <h2 class="mb-1">Reception Dashboard</h2>
-        <div class="ims-muted">Search patients, open visits, and create services.</div>
-    </div>
-    <div class="d-flex gap-2">
-        <a asp-page="/Reception/CreatePatient" class="btn btn-primary">Create Patient</a>
-        <a asp-page="/Reception/ManageVisitServices" class="btn btn-outline-light">Manage Visit/Services</a>
-    </div>
-</div>
+<h2>Reception Dashboard</h2>
 
-<div class="row g-3 mb-4">
-    <div class="col-md-4">
-        <div class="ims-card p-3">
-            <div class="ims-muted">Today's Patients</div>
-            <div class="display-5 mt-1">@Model.TodayPatientCount</div>
+<div class="row">
+    <!-- کارت: تعداد بیماران امروز -->
+    <div class="col-md-3">
+        <div class="card bg-light mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Today's Patients</h5>
+                <p class="card-text display-4">@Model.TodayPatientCount</p>
+            </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="ims-card p-3">
-            <div class="ims-muted">Today's Visits</div>
-            <div class="display-5 mt-1">@Model.TodayVisitCount</div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="ims-card p-3">
-            <div class="ims-muted">Quick Search</div>
-            <div class="small ims-muted mt-1">Find by name or patient ID</div>
+
+    <!-- کارت: تعداد Visitهای امروز -->
+    <div class="col-md-3">
+        <div class="card bg-light mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Today's Visits</h5>
+                <p class="card-text display-4">@Model.TodayVisitCount</p>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="ims-card p-3 mb-3">
-    <form method="get" class="row g-2 align-items-center">
-        <div class="col-md-6">
-            <input name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Search by name or ID" />
-        </div>
-        <div class="col-md-3">
-            <button type="submit" class="btn btn-primary w-100">Search</button>
-        </div>
-        <div class="col-md-3">
-            <a asp-page="/Reception/Index" class="btn btn-outline-light w-100">Reset</a>
-        </div>
-    </form>
-</div>
+<hr />
 
-<div class="ims-card p-3">
-    <div class="d-flex align-items-center justify-content-between mb-2">
-        <h5 class="mb-0">Recent Patients</h5>
-        <span class="ims-muted small">Showing up to 50</span>
+<!-- بخش جستجو بر اساس نام یا ID بیمار -->
+<form method="get" class="row mb-3">
+    <div class="col-md-4">
+        <input name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Search by name or ID" />
     </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
 
-    @if (Model.Patients != null && Model.Patients.Any())
-    {
-        <table class="table table-striped mb-0">
-            <thead>
+<!-- لیست بیماران اخیر -->
+@if (Model.Patients != null && Model.Patients.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>FullName</th>
+                <th>Last Visit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Patients)
+            {
                 <tr>
-                    <th>Patient ID</th>
-                    <th>Full Name</th>
-                    <th>Last Visit</th>
+                    <td>@p.Id</td>
+                    <td>
+                        <a asp-page="/Reception/PatientDetails" asp-route-id="@p.Id">
+                            @p.FullName
+                        </a>
+                    </td>
+                    <td>@p.LastVisitDate?.ToString("yyyy-MM-dd HH:mm")</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var p in Model.Patients)
-                {
-                    <tr>
-                        <td>@p.Id</td>
-                        <td>
-                            <a asp-page="/Reception/PatientDetails" asp-route-id="@p.Id" class="text-decoration-none">
-                                @p.FullName
-                            </a>
-                        </td>
-                        <td>@p.LastVisitDate?.ToString("yyyy-MM-dd HH:mm")</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <div class="ims-muted">No patients found.</div>
-    }
-</div>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No patient found.</p>
+}

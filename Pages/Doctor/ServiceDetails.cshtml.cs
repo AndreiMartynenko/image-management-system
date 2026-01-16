@@ -46,7 +46,7 @@ namespace HealthcareIMS.Pages.Doctor
         {
             var userId = _userManager.GetUserId(User);
 
-            // Doctor role
+            // نقش Doctor
             if (!User.IsInRole("Doctor"))
                 return Forbid();
 
@@ -58,13 +58,13 @@ namespace HealthcareIMS.Pages.Doctor
             if (svc == null)
                 return NotFound();
 
-            // Ensure this service belongs to DoctorVisit
+            // بررسی اینکه این سرویس متعلق به DoctorVisit باشد
             if (svc.ServiceCategory != "DoctorVisit")
             {
                 return Forbid();
             }
 
-            // If DoctorId is set and does not match this doctor, forbid
+            // اگر DoctorId != doc.Id ولی مقداردهی شده، اجازه نداریم
             var doc = await _context.Doctors.FirstOrDefaultAsync(d => d.UserId == userId);
             if (doc == null) return Forbid();
 
@@ -78,14 +78,14 @@ namespace HealthcareIMS.Pages.Doctor
             UpdatedDiagnosis = svc.Diagnosis;
             UpdatedComments = svc.Comments;
 
-            // Other services in the same Visit
+            // سایر سرویس‌های همین Visit
             ServicesInSameVisit = await _context.Services
                 .Include(x => x.Doctor).ThenInclude(d => d.User)
                 .Where(x => x.VisitId == svc.VisitId && x.Id != svc.Id)
                 .OrderBy(x => x.ServiceDate)
                 .ToListAsync();
 
-            // Images
+            // تصاویر
             ImagingList = await _context.Imagings
                 .Where(img => img.VisitId == svc.VisitId)
                 .ToListAsync();
@@ -120,7 +120,7 @@ namespace HealthcareIMS.Pages.Doctor
             }
         }
 
-        // Update Diagnosis/Comments
+        // بروزرسانی Diagnosis/Comments
         public async Task<IActionResult> OnPostUpdateDiagnosisAsync(int serviceId)
         {
             var userId = _userManager.GetUserId(User);
@@ -130,7 +130,7 @@ namespace HealthcareIMS.Pages.Doctor
             var svc = await _context.Services.FindAsync(serviceId);
             if (svc == null) return NotFound();
 
-            // Check category
+            // کنترل Category
             if (svc.ServiceCategory != "DoctorVisit")
             {
                 return Forbid();
@@ -182,10 +182,10 @@ namespace HealthcareIMS.Pages.Doctor
             return RedirectToPage("/Doctor/Index");
         }
 
-        // Change category on submit
+        // تغییر Category با submit
         public async Task<IActionResult> OnPost(int serviceId, string dummy = null)
         {
-            // Just refresh
+            // صرفاً رفرش 
             return await OnGetAsync(serviceId);
         }
 
@@ -208,7 +208,7 @@ namespace HealthcareIMS.Pages.Doctor
                 return Forbid();
             }
 
-            // Mark current service as Done
+            // سرویس جاری را Done
             svc.ServiceStatus = "Done";
             _context.Services.Update(svc);
 

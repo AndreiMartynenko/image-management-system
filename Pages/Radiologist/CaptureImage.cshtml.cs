@@ -60,14 +60,14 @@ namespace HealthcareIMS.Pages.Radiologist
 
         public async Task<IActionResult> OnPostAsync(IFormFile ImageFile)
         {
-            // Basic validation
+            // اعتبارسنجی پایه
             if (ImageFile == null || ImageFile.Length == 0)
             {
                 ModelState.AddModelError("", "Please select an image file.");
                 return Page();
             }
 
-            // AppointmentId is read from the BindProperty
+            // لطفاً AppointmentId از BindProperty خوانده می‌شود
             var appointment = await _context.Appointments
                 .Include(a => a.Patient)
                 .FirstOrDefaultAsync(a => a.Id == AppointmentId);
@@ -77,20 +77,20 @@ namespace HealthcareIMS.Pages.Radiologist
                 return NotFound();
             }
 
-            // If VisitId is stored on Appointment:
-            // var visitId = appointment.VisitId (if you have it)
-            // Otherwise, you need to resolve the patient's visit
+            // اگر VisitId داخل Appointment هم ذخیره شده باشد:
+            // var visitId = appointment.VisitId (اگر دارید)
+            // در غیر این صورت باید somehow visit patient
 
-            // Find the real VisitId. If it's on Appointment, great;
-            // if not, you can:
+            // در اینجا باید VisitId واقعی را بیابیم. اگر در appointment هست، عالی؛
+            // اگر نه، می‌توانید:
             // var openVisit = _context.Visits.FirstOrDefault(v => v.PatientId == appointment.PatientId && v.VisitStatus=="Open");
             // یا ...
-            // Here we assume we won't leave VisitId as 0.
-            // If you intend to allow Imaging without a required VisitId, you can skip this.
+            // اینجا ساده فرض می‌کنیم VisitId = 0 نداریم.  
+            // یا اگر قصد دارید Imaging بدون VisitId اجباری باشد، می‌توانید Skip کنید.
             int visitId = 0;
             var existingVisit = await _context.Visits
                 .FirstOrDefaultAsync(v => v.PatientId == appointment.PatientId && v.VisitStatus == "Open");
-            // If not found, create a new Visit
+            // اگر پیدا نکردیم، می‌توانیم یک Visit ایجاد کنیم یا ...
             if (existingVisit == null)
             {
                 var newVisit = new Visit
@@ -108,24 +108,24 @@ namespace HealthcareIMS.Pages.Radiologist
                 visitId = existingVisit.Id;
             }
 
-            // Image storage path
+            // مسیر ذخیره‌سازی تصاویر
             var uploadsFolder = Path.Combine("wwwroot", "uploads", "imaging");
             if (!Directory.Exists(uploadsFolder))
             {
                 Directory.CreateDirectory(uploadsFolder);
             }
 
-            // Create a unique filename
+            // ساخت یک نام فایل یکتا
             var uniqueFileName = $"{Guid.NewGuid()}_{ImageFile.FileName}";
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
-            // Save file on server
+            // ذخیره فایل روی سرور
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
                 await ImageFile.CopyToAsync(fileStream);
             }
 
-            // Create a record in the Imagings table
+            // ساخت یک record در جدول Imagings
             var imaging = new Imaging
             {
                 VisitId = visitId,
@@ -143,14 +143,15 @@ namespace HealthcareIMS.Pages.Radiologist
                 ConsentProvided = true
             };
 
-            // If needed, you can populate additional fields
+            // بسته به نیاز، فیلدهای دیگر را هم می‌توانید مقداردهی کنید
             // imaging.ImagingReason = ...
             // imaging.Resolution = ...
 
             _context.Imagings.Add(imaging);
             await _context.SaveChangesAsync();
 
-            // Redirect back to a page that shows imagings, or Radiologist/Index
+            // می‌توانیم کاربر را به صفحه‌ای ببریم که لیست تصویربرداری‌ها را نشان دهد
+            // یا به Radiologist/Index
             return RedirectToPage("/Radiologist/Index");
         }
     }

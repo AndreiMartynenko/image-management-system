@@ -6,24 +6,24 @@ namespace HealthcareIMS.Models
     public class Doctor
     {
         [Key]
-        public int? Id { get; set; } // Primary key
+        public int? Id { get; set; } // کلید اصلی
 
         [Required]
         [ForeignKey("User")]
-        public string UserId { get; set; } // Foreign key to AspNetUsers(Id)
+        public string UserId { get; set; } // کلید خارجی به AspNetUsers(Id)
 
         [Required]
         [StringLength(100)]
-        public string Specialization { get; set; } // Specialization
+        public string Specialization { get; set; } // تخصص
 
         [StringLength(15)]
-        public string? ContactNumber { get; set; } // Optional contact number
+        public string? ContactNumber { get; set; } // شماره تماس اختیاری
 
-        // Optional fields such as license and degree
+        // فیلدهای اختیاری مانند لایسنس و مدرک
         public string?   LicenseNo { get; set; }
         public string? Degree { get; set; }
 
-        // Relationship to AspNetUsers
+        // ارتباط با AspNetUsers
         public virtual User User { get; set; } // Navigation Property
     }
 }

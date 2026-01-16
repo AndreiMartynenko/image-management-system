@@ -15,7 +15,7 @@ namespace HealthcareIMS.Pages.Reception
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<User> _userManager;
-        // private readonly RoleManager<IdentityRole> _roleManager; // If needed
+        // private readonly RoleManager<IdentityRole> _roleManager; // اگر لازم شد
 
         public CreatePatientModel(ApplicationDbContext context, UserManager<User> userManager)
         {
@@ -54,12 +54,12 @@ namespace HealthcareIMS.Pages.Reception
             if (!ModelState.IsValid)
                 return Page();
 
-            // You can use a default password
+            // می‌توانید پسورد را به‌صورت پیش‌فرض بسازید
             var defaultPassword = "DefaultPassword123!";
 
             var user = new User
             {
-                UserName = Input.Email, // Or another identifier
+                UserName = Input.Email, // یا هرچیز دیگر
                 Email = Input.Email,
                 PhoneNumber = Input.PhoneNumber,
                 FirstName = Input.FirstName,
@@ -70,7 +70,7 @@ namespace HealthcareIMS.Pages.Reception
                 Status = "Active"
             };
 
-            // Create user in Identity
+            // ساخت کاربر در Identity
             var result = await _userManager.CreateAsync(user, defaultPassword);
             if (!result.Succeeded)
             {
@@ -81,10 +81,10 @@ namespace HealthcareIMS.Pages.Reception
                 return Page();
             }
 
-            // Add Patient role
+            // افزودن نقش Patient
             await _userManager.AddToRoleAsync(user, "Patient");
 
-            // Create record in Patients table
+            // ساخت رکورد در جدول Patients
             var newPatient = new Patient
             {
                 UserId = user.Id

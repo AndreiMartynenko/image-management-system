@@ -16,7 +16,7 @@ namespace HealthcareIMS.Models
         public int PatientId { get; set; }
         public Patient Patient { get; set; }
 
-        // DoctorId is nullable
+        // به جای DoctorId از نوع int -> nullable
         [ForeignKey("Doctor")]
         public int? DoctorId { get; set; }
         public Doctor Doctor { get; set; }

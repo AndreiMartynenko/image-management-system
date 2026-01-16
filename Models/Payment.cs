@@ -8,20 +8,20 @@ namespace HealthcareIMS.Models
         [Key]
         public int Id { get; set; }
 
-        public int InvoiceId { get; set; } // Relationship to Invoice
+        public int InvoiceId { get; set; } // ارتباط با Invoice
 
         [Required]
-        public decimal Amount { get; set; } // Payment amount
+        public decimal Amount { get; set; } // مبلغ پرداختی
 
         [Required]
-        public string PaymentMethod { get; set; } // Payment method (e.g., Cash, Credit Card, Insurance)
+        public string PaymentMethod { get; set; } // روش پرداخت (مانند Cash, Credit Card, Insurance)
 
         [Required]
-        public string PaymentStatus { get; set; } = "Completed"; // Payment status (e.g., Completed)
+        public string PaymentStatus { get; set; } = "Completed"; // وضعیت پرداخت (مانند Completed)
 
         public DateTime PaymentDate { get; set; } = DateTime.Now;
 
-        // Relationship to Invoice
+        // ارتباط با Invoice
         public Invoice Invoice { get; set; }
     }
 }

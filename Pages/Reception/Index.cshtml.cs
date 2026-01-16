@@ -15,14 +15,14 @@ namespace HealthcareIMS.Pages.Reception
             _context = context;
         }
 
-        // Stats cards
+        // کارت آمار
         public int TodayPatientCount { get; set; }
         public int TodayVisitCount { get; set; }
 
-        // Search
+        // جستجو
         public string SearchTerm { get; set; }
 
-        // Patient list
+        // لیست بیماران
         public List<PatientViewDto> Patients { get; set; } = new();
 
         public class PatientViewDto
@@ -36,26 +36,26 @@ namespace HealthcareIMS.Pages.Reception
         {
             SearchTerm = searchTerm ?? "";
 
-            // Today's stats
+            // آمار امروز
             var today = DateTime.Today;
 
-            // Count distinct patients who had a visit today
+            // شمارش بیمارانی که امروز ویزیت داشته‌اند
             TodayPatientCount = await _context.Visits
                 .Where(v => v.VisitDate.Date == today)
                 .Select(v => v.PatientId)
                 .Distinct()
                 .CountAsync();
 
-            // Count total visits today
+            // شمارش کل ویزیت‌های امروز
             TodayVisitCount = await _context.Visits
                 .CountAsync(v => v.VisitDate.Date == today);
 
-            // Patient search
+            // جستجوی بیماران
             bool isNumber = int.TryParse(SearchTerm, out int pid);
 
 
             var query = _context.Patients
-                .Include(p => p.User) // Load related User data for the patient
+                .Include(p => p.User) // بارگذاری داده‌های User مرتبط با Patient
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(SearchTerm))
@@ -79,12 +79,12 @@ namespace HealthcareIMS.Pages.Reception
                 .ToListAsync();
 
 
-            // Build DTOs for display and last visit info
+            // ساخت DTO برای نمایش بیماران و آخرین ویزیت
             var result = new List<PatientViewDto>();
 
             foreach (var p in patientList)
             {
-                // Find the patient's latest visit
+                // پیدا کردن آخرین ویزیت بیمار
                 var lastVisit = await _context.Visits
                     .Include(v => v.Patient)
                     .Where(v => v.Patient.Id == p.Id)
@@ -94,7 +94,7 @@ namespace HealthcareIMS.Pages.Reception
                 var dto = new PatientViewDto
                 {
                     Id = p.Id,
-                    FullName = $"{p.User.FirstName} {p.User.LastName}", // Using FirstName and LastName from AspNetUsers
+                    FullName = $"{p.User.FirstName} {p.User.LastName}", // استفاده از FirstName و LastName از AspNetUsers
                     LastVisitDate = lastVisit?.VisitDate
                 };
 

@@ -6,12 +6,12 @@ namespace HealthcareIMS.Models
     public class Patient
     {
         [Key]
-        public int Id { get; set; } // Primary key
+        public int Id { get; set; } // کلید اصلی
 
         [ForeignKey("User")]
-        public string UserId { get; set; } // Foreign key to AspNetUsers(Id)
+        public string UserId { get; set; } // کلید خارجی به AspNetUsers(Id)
 
-        // Relationship to AspNetUsers
+        // ارتباط با AspNetUsers
         public virtual User User { get; set; } // Navigation Property
     }
 }

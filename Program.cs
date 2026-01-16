@@ -1,6 +1,5 @@
-using HealthcareIMS.Data; // DbContext and data layer
+using HealthcareIMS.Data; // پوشه‌ای که DbContext را قرار می‌دهیم
 using HealthcareIMS.Models;
-using HealthcareIMS.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,27 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    if (OperatingSystem.IsMacOS())
-    {
-        options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection"));
-    }
-    else
-    {
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-    }
-});
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configure default Identity + roles
+// اینجا از Identity پیش‌فرض استفاده می‌کنیم + نقش‌ها
 builder.Services.AddDefaultIdentity<User>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
 })
 .AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
-
-
-builder.Services.AddScoped<IBillingService, BillingService>();
 
 
 builder.Services.AddRazorPages()
@@ -46,13 +33,11 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     try
     {
-        var db = services.GetRequiredService<ApplicationDbContext>();
-        await db.Database.EnsureCreatedAsync();
         await DatabaseSeeder.SeedRolesAndAdminUserAsync(services);
     }
     catch (Exception ex)
     {
-        // Log the error
+        // در لاگ ثبت کن
         Console.WriteLine(ex.Message);
     }
 }

@@ -2,64 +2,47 @@
 @model HealthcareIMS.Pages.Accountant.InvoicesModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<div class="d-flex align-items-center justify-content-between mb-3">
-    <div>
-        <h2 class="mb-1">Invoices</h2>
-        <div class="ims-muted">Search invoices and record payments.</div>
-    </div>
-</div>
+<h2>Invoices</h2>
 
-<div class="ims-card p-3 mb-3">
-    <form method="get" class="row g-2 align-items-center">
-        <div class="col-md-9">
-            <input type="text" name="SearchTerm" placeholder="Search invoices..."
-                   value="@Model.SearchTerm" class="form-control" />
-        </div>
-        <div class="col-md-3">
-            <button type="submit" class="btn btn-primary w-100">Search</button>
-        </div>
-    </form>
-</div>
+<!-- فرم جست‌وجو -->
+<form method="get" class="mb-3">
+    <input type="text" name="SearchTerm" placeholder="Search invoices..."
+           value="@Model.SearchTerm" class="form-control" />
+    <button type="submit" class="btn btn-secondary mt-2">Search</button>
+</form>
 
-<div class="ims-card p-3">
-    <div class="d-flex align-items-center justify-content-between mb-2">
-        <h5 class="mb-0">Invoice List</h5>
-        <span class="ims-muted small">@Model.Invoices?.Count() invoice(s)</span>
-    </div>
-
-    <table class="table table-striped mb-0">
-        <thead>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Invoice ID</th>
+            <th>Visit ID</th>
+            <th>Patient Name</th>
+            <th>Total Amount</th>
+            <th>Paid Amount</th>
+            <th>Payment Status</th>
+            <th>Issued Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var invoice in Model.Invoices)
+        {
             <tr>
-                <th>Invoice ID</th>
-                <th>Visit ID</th>
-                <th>Patient</th>
-                <th>Total</th>
-                <th>Paid</th>
-                <th>Status</th>
-                <th>Issued</th>
-                <th></th>
+                <td>@invoice.Id</td>
+                <td>@invoice.VisitId</td>
+                <td>
+                    <!-- نمایش نام بیمار -->
+                    @(invoice.Visit?.Patient?.User?.FirstName) @(invoice.Visit?.Patient?.User?.LastName)
+                </td>
+                <td>@invoice.TotalAmount</td>
+                <td>@invoice.PaidAmount</td>
+                <td>@invoice.PaymentStatus</td>
+                <td>@invoice.IssuedDate</td>
+                <td>
+                    <!-- لینک جزئیات: اینجا باید دقیقاً با فایل InvoiceDetails.cshtml یکی باشد -->
+                    <a asp-page="./InvoiceDetails" asp-route-id="@invoice.Id" class="btn btn-primary btn-sm">Details</a>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var invoice in Model.Invoices)
-            {
-                <tr>
-                    <td>@invoice.Id</td>
-                    <td>@invoice.VisitId</td>
-                    <td>
-                        @(invoice.Visit?.Patient?.User?.FirstName) @(invoice.Visit?.Patient?.User?.LastName)
-                    </td>
-                    <td>@invoice.TotalAmount</td>
-                    <td>@invoice.PaidAmount</td>
-                    <td>
-                        <span class="badge text-bg-secondary">@invoice.PaymentStatus</span>
-                    </td>
-                    <td>@invoice.IssuedDate</td>
-                    <td class="text-end">
-                        <a asp-page="./InvoiceDetails" asp-route-id="@invoice.Id" class="btn btn-primary btn-sm">Open</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
+        }
+    </tbody>
+</table>

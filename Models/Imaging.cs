@@ -16,13 +16,13 @@ namespace HealthcareIMS.Models
         public string ImagingType { get; set; } // MRI, XRay, ...
         public string DiseaseType { get; set; }
 
-        public string? ImageFile { get; set; }   // File path
+        public string? ImageFile { get; set; }   // مسیر فایل
         public string? Resolution { get; set; }
         public long FileSize { get; set; }
         public string? FileType { get; set; }
         public DateTime CaptureDate { get; set; } = DateTime.Now;
 
-        public string? CapturedBy { get; set; }  // Captured by (RadiologistUserId?)
+        public string? CapturedBy { get; set; }  // چه کسی (RadiologistUserId؟)
         public string? DeviceID { get; set; }
         public string? BodyPart { get; set; }
         public string? ImagingReason { get; set; }

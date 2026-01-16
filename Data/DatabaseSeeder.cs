@@ -12,8 +12,8 @@ namespace HealthcareIMS.Data
             var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var userManager = serviceProvider.GetRequiredService<UserManager<User>>();
 
-            // Roles
-            string[] roles = new string[] { "Admin", "Reception", "Doctor", "Radiologist", "Accountant", "Patient" };
+            // نقش‌ها
+            string[] roles = new string[] { "Admin", "Reception", "Doctor", "Radiologist", "Accountant" };
             foreach (var roleName in roles)
             {
                 if (!await roleManager.RoleExistsAsync(roleName))
@@ -22,45 +22,23 @@ namespace HealthcareIMS.Data
                 }
             }
 
-            // Create default admin user
-            var adminEmail = "admin@aurora.com";
-            var legacyAdminEmail = "admin@abc.com";
-
+            // ساخت کاربر ادمین پیش‌فرض
+            var adminEmail = "admin@abc.com";
             var adminUser = await userManager.FindByEmailAsync(adminEmail);
             if (adminUser == null)
             {
-                var legacyAdminUser = await userManager.FindByEmailAsync(legacyAdminEmail);
-                if (legacyAdminUser != null)
+                adminUser = new User
                 {
-                    var setEmailResult = await userManager.SetEmailAsync(legacyAdminUser, adminEmail);
-                    var setUserNameResult = await userManager.SetUserNameAsync(legacyAdminUser, adminEmail);
-                    if (setEmailResult.Succeeded && setUserNameResult.Succeeded)
-                    {
-                        legacyAdminUser.EmailConfirmed = true;
-                        adminUser = legacyAdminUser;
-                        await userManager.UpdateAsync(adminUser);
-                    }
-                }
-
-                if (adminUser == null)
+                    UserName = adminEmail,
+                    Email = adminEmail,
+                    EmailConfirmed = true
+                };
+                var result = await userManager.CreateAsync(adminUser, "123456aA@");
+                if (result.Succeeded)
                 {
-                    adminUser = new User
-                    {
-                        UserName = adminEmail,
-                        Email = adminEmail,
-                        EmailConfirmed = true
-                    };
-                    var result = await userManager.CreateAsync(adminUser, "123456aA@");
-                    if (!result.Succeeded)
-                    {
-                        return;
-                    }
+                    // نقش Admin را به او اضافه کن
+                    await userManager.AddToRoleAsync(adminUser, "Admin");
                 }
-            }
-
-            if (adminUser != null && !await userManager.IsInRoleAsync(adminUser, "Admin"))
-            {
-                await userManager.AddToRoleAsync(adminUser, "Admin");
             }
         }
     }

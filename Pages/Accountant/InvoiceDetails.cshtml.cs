@@ -1,6 +1,5 @@
 ﻿using HealthcareIMS.Data;
 using HealthcareIMS.Models;
-using HealthcareIMS.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -12,11 +11,11 @@ namespace HealthcareIMS.Pages.Accountant
     [Authorize(Roles = "Accountant")]
     public class InvoiceDetailsModel : PageModel
     {
-        private readonly IBillingService _billingService;
+        private readonly ApplicationDbContext _context;
 
-        public InvoiceDetailsModel(IBillingService billingService)
+        public InvoiceDetailsModel(ApplicationDbContext context)
         {
-            _billingService = billingService;
+            _context = context;
         }
 
         [BindProperty]
@@ -24,7 +23,13 @@ namespace HealthcareIMS.Pages.Accountant
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            Invoice = await _billingService.GetInvoiceDetailsAsync(id);
+            Invoice = await _context.Invoices
+                .Include(i => i.Payments)
+                .Include(i => i.Visit)
+                    .ThenInclude(v => v.Services)
+                        .ThenInclude(s => s.Doctor)
+                            .ThenInclude(d => d.User)
+                .FirstOrDefaultAsync(i => i.Id == id);
 
             if (Invoice == null)
             {
@@ -36,19 +41,57 @@ namespace HealthcareIMS.Pages.Accountant
 
         public async Task<IActionResult> OnPostAsync(int id, decimal amount, string paymentMethod)
         {
-            var result = await _billingService.AddPaymentAsync(id, amount, paymentMethod);
-            if (!result.Success)
+            // فاکتور را از دیتابیس بخوانیم
+            var invoice = await _context.Invoices.FindAsync(id);
+            if (invoice == null)
             {
-                ModelState.AddModelError(string.Empty, result.ErrorMessage ?? "Payment failed.");
-                Invoice = await _billingService.GetInvoiceDetailsAsync(id);
-                if (Invoice == null)
-                {
-                    return NotFound();
-                }
+                return NotFound();
+            }
+
+            // محاسبه‌ی مبلغ باقیمانده
+            var remaining = invoice.TotalAmount - invoice.PaidAmount;
+            if (amount > remaining)
+            {
+                // اگر مبلغ پرداخت بیش از مبلغ باقیمانده باشد، خطا بده
+                ModelState.AddModelError(string.Empty,
+                    "The payment amount cannot exceed the remaining invoice balance.");
+
+                // برای نمایش مجدد داده‌ها در صفحه، دوباره Invoice را بارگیری می‌کنیم
+                Invoice = await _context.Invoices
+                    .Include(i => i.Payments)
+                    .Include(i => i.Visit)
+                        .ThenInclude(v => v.Services)
+                            .ThenInclude(s => s.Doctor)
+                                .ThenInclude(d => d.User)
+                    .FirstOrDefaultAsync(i => i.Id == id);
+
                 return Page();
             }
 
-            // After successful payment, return to the same page
+            // ایجاد یک رکورد پرداخت جدید
+            var payment = new Payment
+            {
+                InvoiceId = id,
+                Amount = amount,
+                PaymentMethod = paymentMethod
+            };
+            _context.Payments.Add(payment);
+
+            // به‌روزرسانی وضعیت فاکتور
+            invoice.PaidAmount += amount;
+            if (invoice.PaidAmount >= invoice.TotalAmount)
+            {
+                invoice.PaymentStatus = "Paid";
+            }
+            else
+            {
+                invoice.PaymentStatus = "Partially Paid";
+            }
+
+            _context.Invoices.Update(invoice);
+            await _context.SaveChangesAsync();
+
+            // پس از موفقیت در پرداخت، بازهم به همین صفحه برمی‌گردیم
             return RedirectToPage(new { id });
         }
     }

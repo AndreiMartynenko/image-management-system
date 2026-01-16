@@ -15,27 +15,27 @@
 </head>
 <body>
     <header>
-        <!-- Top navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light ims-navbar">
+        <!-- Navbar بالا -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <!-- Brand -->
-                <a class="navbar-brand fw-bold ims-brand" asp-page="/Index">
-                    Aurora Healthcare IMS
+                <!-- لوگو یا عنوان سمت چپ -->
+                <a class="navbar-brand fw-bold" href="/Pages/Index">
+                    ABC Healthcare IMS
                 </a>
 
-                <!-- Mobile toggle -->
+                <!-- دکمه تoggler برای موبایل -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Right side -->
+                <!-- بخش راست ناوبار -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     @User.Identity.Name
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
@@ -65,36 +65,38 @@
         </nav>
     </header>
 
-    <div class="container-fluid ims-shell">
+    <div class="container-fluid">
         <div class="row flex-nowrap">
-            <!-- Left sidebar -->
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 ims-sidebar" id="sidebarMenu">
+            <!-- Sidebar سمت چپ -->
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 bg-light border-end" id="sidebarMenu">
+                <!-- اینجا بعداً منوهای نقش‌ها را می‌گذاریم -->
+                <!-- در _Layout.cshtml -->
 
                 <ul class="nav nav-pills flex-column mb-auto mt-3" id="sidebar-nav">
                     @if (User.IsInRole("Admin"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link" href="/Admin/Dashboard/Index">
+                            <a class="nav-link link-dark" href="/Admin/Dashboard/Index">
                                 Admin Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Admin/Users/Index">
+                            <a class="nav-link link-dark" href="/Admin/Users/Index">
                                 User Management
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Admin/Roles/Index">
+                            <a class="nav-link link-dark" href="/Admin/Roles/Index">
                                 Role Management
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Admin/ServiceDefinitions/Index">
+                            <a class="nav-link link-dark" href="/Admin/ServiceDefinitions/Index">
                                 Service Management
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Admin/Specialties/Index">
+                            <a class="nav-link link-dark" href="/Admin/Specialties/Index">
                                 Specialty Management
                             </a>
                         </li>
@@ -104,17 +106,17 @@
                     @if (User.IsInRole("Reception"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Reception/Index">
+                            <a class="nav-link link-dark" asp-page="/Reception/Index">
                                 Reception Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Reception/CreatePatient">
+                            <a class="nav-link link-dark" asp-page="/Reception/CreatePatient">
                                 Create Patient
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Reception/ManageVisitServices">
+                            <a class="nav-link link-dark" asp-page="/Reception/ManageVisitServices">
                                 Manage Visit/Services
                             </a>
                         </li>
@@ -125,7 +127,7 @@
                     @if (User.IsInRole("Doctor"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Doctor/Index">
+                            <a class="nav-link link-dark" asp-page="/Doctor/Index">
                                 Doctor Dashboard
                             </a>
                         </li>
@@ -136,12 +138,12 @@
                     @if (User.IsInRole("Radiologist"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Radiologist/Index">
+                            <a class="nav-link link-dark" asp-page="/Radiologist/Index">
                                 Radiologist Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Radiologist/CaptureImage">
+                            <a class="nav-link link-dark" asp-page="/Radiologist/CaptureImage">
                                 Capture Image
                             </a>
                         </li>
@@ -150,14 +152,14 @@
                     }
                     @if (User.IsInRole("Accountant"))
                     {
-                        <!-- Sidebar section -->
+                        <!-- بخشی از سایدبار -->
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Accountant/Invoices">
+                            <a class="nav-link link-dark" asp-page="/Accountant/Invoices">
                                 Accountant Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-page="/Accountant/AllInvoices" class="nav-link">
+                            <a asp-page="/Accountant/AllInvoices" class="nav-link link-dark">
                                 All Invoices
                             </a>
                         </li>
@@ -171,19 +173,19 @@
 
                     @if (hasAccess)
                     {
-
-						<!-- Sidebar section -->
+                    
+						<!-- بخشی از سایدبار -->
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Reports/Index">Reports</a>
+                            <a class="nav-link link-dark" asp-page="/Reports/Index">Reports</a>
                         </li>
 
 					}
 
                     else
                     {
-                        <!-- If not logged in or no recognized role -->
+                        <!-- اگر نقش خاصی ندارد یا لاگین نیست -->
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Index">
+                            <a class="nav-link link-dark" href="#">
                                 Home
                             </a>
                         </li>
@@ -192,8 +194,8 @@
 
             </div>
 
-            <!-- Main content -->
-            <main class="col py-3 ims-content">
+            <!-- بخش اصلی محتوا -->
+            <main class="col py-3">
                 <div class="container">
                     @RenderBody()
                 </div>

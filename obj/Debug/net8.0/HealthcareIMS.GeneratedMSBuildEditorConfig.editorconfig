@@ -15,245 +15,243 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.TargetFrameworkIdentifier = .NETCoreApp
-build_property.TargetFrameworkVersion = v8.0
 build_property.RootNamespace = HealthcareIMS
 build_property.RootNamespace = HealthcareIMS
-build_property.ProjectDir = /Users/developer/Desktop/SA/Assignments/HealthcareIMS/
+build_property.ProjectDir = C:\Users\hhesh\source\repos\HealthcareIMS\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/developer/Desktop/SA/Assignments/HealthcareIMS
+build_property.MSBuildProjectDirectory = C:\Users\hhesh\source\repos\HealthcareIMS
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Areas/Identity/Pages/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Areas/Identity/Pages/Account/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Areas/Identity/Pages/Account/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvQWNjb3VudC9fVmlld0ltcG9ydHMuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Areas/Identity/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Accountant/AllInvoices.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudGFudC9BbGxJbnZvaWNlcy5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Accountant/AllInvoices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudGFudFxBbGxJbnZvaWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Accountant/InvoiceDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudGFudC9JbnZvaWNlRGV0YWlscy5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Accountant/InvoiceDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudGFudFxJbnZvaWNlRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Accountant/Invoices.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudGFudC9JbnZvaWNlcy5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Accountant/Invoices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudGFudFxJbnZvaWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Dashboard/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRGFzaGJvYXJkL0luZGV4LmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Roles/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUm9sZXMvQ3JlYXRlLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Roles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Roles/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUm9sZXMvRGVsZXRlLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Roles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Roles/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUm9sZXMvRWRpdC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Roles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Roles/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUm9sZXMvSW5kZXguY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/ServiceDefinitions/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vU2VydmljZURlZmluaXRpb25zL0NyZWF0ZS5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/ServiceDefinitions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU2VydmljZURlZmluaXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/ServiceDefinitions/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vU2VydmljZURlZmluaXRpb25zL0RlbGV0ZS5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/ServiceDefinitions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU2VydmljZURlZmluaXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/ServiceDefinitions/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vU2VydmljZURlZmluaXRpb25zL0VkaXQuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/ServiceDefinitions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU2VydmljZURlZmluaXRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/ServiceDefinitions/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vU2VydmljZURlZmluaXRpb25zL0luZGV4LmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/ServiceDefinitions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU2VydmljZURlZmluaXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Specialties/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vU3BlY2lhbHRpZXMvQ3JlYXRlLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Specialties/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3BlY2lhbHRpZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Specialties/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vU3BlY2lhbHRpZXMvRGVsZXRlLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Specialties/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3BlY2lhbHRpZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Specialties/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vU3BlY2lhbHRpZXMvRWRpdC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Specialties/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3BlY2lhbHRpZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Specialties/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vU3BlY2lhbHRpZXMvSW5kZXguY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Specialties/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3BlY2lhbHRpZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Users/AssignRoles.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vVXNlcnMvQXNzaWduUm9sZXMuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Users/AssignRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcQXNzaWduUm9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vVXNlcnMvQ3JlYXRlLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Users/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vVXNlcnMvRGV0YWlscy5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Users/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vVXNlcnMvRWRpdC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/Users/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vVXNlcnMvSW5kZXguY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Admin/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Admin/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Doctor/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRG9jdG9yL0luZGV4LmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Doctor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jdG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Doctor/ServiceDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRG9jdG9yL1NlcnZpY2VEZXRhaWxzLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Doctor/ServiceDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jdG9yXFNlcnZpY2VEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Radiologist/CaptureImage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmFkaW9sb2dpc3QvQ2FwdHVyZUltYWdlLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Radiologist/CaptureImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmFkaW9sb2dpc3RcQ2FwdHVyZUltYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Radiologist/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmFkaW9sb2dpc3QvSW5kZXguY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Radiologist/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmFkaW9sb2dpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Radiologist/ServiceDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmFkaW9sb2dpc3QvU2VydmljZURldGFpbHMuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Radiologist/ServiceDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmFkaW9sb2dpc3RcU2VydmljZURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reception/CreatePatient.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVjZXB0aW9uL0NyZWF0ZVBhdGllbnQuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reception/CreatePatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjZXB0aW9uXENyZWF0ZVBhdGllbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reception/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVjZXB0aW9uL0luZGV4LmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reception/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjZXB0aW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reception/ManageVisitServices.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVjZXB0aW9uL01hbmFnZVZpc2l0U2VydmljZXMuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reception/ManageVisitServices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjZXB0aW9uXE1hbmFnZVZpc2l0U2VydmljZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reception/PatientDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVjZXB0aW9uL1BhdGllbnREZXRhaWxzLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reception/PatientDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjZXB0aW9uXFBhdGllbnREZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/DoctorPerformance.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9Eb2N0b3JQZXJmb3JtYW5jZS5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/DoctorPerformance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xEb2N0b3JQZXJmb3JtYW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/FinancialReport .cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9GaW5hbmNpYWxSZXBvcnQgLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/FinancialReport .cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xGaW5hbmNpYWxSZXBvcnQgLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/ImageClassificationReport .cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9JbWFnZUNsYXNzaWZpY2F0aW9uUmVwb3J0IC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/ImageClassificationReport .cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xJbWFnZUNsYXNzaWZpY2F0aW9uUmVwb3J0IC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9JbmRleC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/ManagementDashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9NYW5hZ2VtZW50RGFzaGJvYXJkLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/ManagementDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xNYW5hZ2VtZW50RGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/PatientHistory.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9QYXRpZW50SGlzdG9yeS5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/PatientHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xQYXRpZW50SGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/PatientsReport.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9QYXRpZW50c1JlcG9ydC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/PatientsReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xQYXRpZW50c1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/RadiologyReport.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9SYWRpb2xvZ3lSZXBvcnQuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/RadiologyReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xSYWRpb2xvZ3lSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/ServicesReport.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9TZXJ2aWNlc1JlcG9ydC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/ServicesReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xTZXJ2aWNlc1JlcG9ydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/StaffPerformance.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9TdGFmZlBlcmZvcm1hbmNlLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/StaffPerformance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xTdGFmZlBlcmZvcm1hbmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Reports/VisitsReport.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVwb3J0cy9WaXNpdHNSZXBvcnQuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Reports/VisitsReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0c1xWaXNpdHNSZXBvcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Services/ServiceDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VydmljZXMvU2VydmljZURldGFpbHMuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Services/ServiceDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNcU2VydmljZURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/developer/Desktop/SA/Assignments/HealthcareIMS/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-g9yyc377br
+[C:/Users/hhesh/source/repos/HealthcareIMS/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-jc26o328nd

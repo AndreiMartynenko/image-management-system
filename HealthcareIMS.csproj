@@ -20,13 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="HealthcareIMS\**\*.cs" />
-    <Content Remove="HealthcareIMS\**\*" />
-    <EmbeddedResource Remove="HealthcareIMS\**\*" />
-    <None Remove="HealthcareIMS\**\*" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="Pages\Radiologist\Index.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
